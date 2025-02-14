@@ -24,22 +24,12 @@ def main():         #taking inputs
         n = int(input())
         ingredients = input().strip().split()
         
+        #forming a hash map for the ingredients
+        hash_map = {'o': [0,1,0], 't':[1,0,0], 'b':[0,0,1], 'p':[1,1,0], 'y':[0,1,1], 'c':[1,0,1], 's':[1,1,1]}
+
         matrix = []     #initializing a 2d matrix
         for i in range(n):          #forming the 2d array
-            if ingredients[i]=='o':
-                matrix.append([0,1,0])
-            elif ingredients[i]=='t':
-                matrix.append([1,0,0])
-            elif ingredients[i]=='b':
-                matrix.append([0,0,1])
-            elif ingredients[i]=='p':
-                matrix.append([1,1,0])
-            elif ingredients[i]=='y':
-                matrix.append([0,1,1])
-            elif ingredients[i]=='c':
-                matrix.append([1,0,1])
-            elif ingredients[i]=='s':
-                matrix.append([1,1,1])
+            matrix.append(hash_map[ingredients[i]])
         
         print(giveResult(matrix, n))
         
