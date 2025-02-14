@@ -1,5 +1,4 @@
 #LONG WORDS
-
 def convert(word):
     if len(word) <= 10:  #if length of word is lesser than 10, the word remains unchanged
         return word
